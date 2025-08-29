@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EducaFlex — Plataforma de Aprendizagem Personalizada</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>EducaFlex</h1>
+            <p>Plataforma de Aprendizagem Personalizada com IA</p>
+            <img src="https://img.icons8.com/color/96/000000/artificial-intelligence.png" alt="Logo EducaFlex" style="max-width:120px; margin-top:1rem;">
+        </header>
+        <section>
+            <h2>O que é a EducaFlex?</h2>
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="Educacao personalizada" style="width:100%;max-width:320px;display:block;margin:1rem auto;">
+            <p>
+                A EducaFlex é uma plataforma inovadora que utiliza Inteligência Artificial e análise de dados para adaptar conteúdos ao perfil de cada estudante, tornando o aprendizado mais eficiente, divertido e personalizado.
+            </p>
+        </section>
+        <section>
+            <h2>Principais Funcionalidades</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <img src="https://img.icons8.com/color/48/000000/artificial-intelligence.png" alt="Icone IA" style="width:48px;display:block;margin-bottom:0.5rem;">
+                    <strong>IA & Dados</strong>
+                    <p>Conteúdos adaptados ao perfil do estudante, com base em análise de desempenho e preferências.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://img.icons8.com/color/48/000000/combo-chart--v1.png" alt="Icone Relatorios" style="width:48px;display:block;margin-bottom:0.5rem;">
+                    <strong>Relatórios Inteligentes</strong>
+                    <p>Professores recebem relatórios detalhados sobre pontos fortes e fracos de cada aluno.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://img.icons8.com/color/48/000000/learning.png" alt="Icone Trilhas" style="width:48px;display:block;margin-bottom:0.5rem;">
+                    <strong>Trilhas Customizadas</strong>
+                    <p>Alunos recebem trilhas de aprendizagem com vídeos, exercícios e jogos conforme seu ritmo.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://img.icons8.com/color/48/000000/school-building.png" alt="Icone Integracao" style="width:48px;display:block;margin-bottom:0.5rem;">
+                    <strong>Integração Escolar</strong>
+                    <p>Compatível com escolas públicas e privadas, facilitando a gestão e acompanhamento.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Como Funciona?</h2>
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="App e Dashboard" style="width:100%;max-width:320px;display:block;margin:1rem auto;">
+            <ul>
+                <li>Aplicativo com login para alunos e professores.</li>
+                <li>Dashboard para professores acompanharem o progresso da turma.</li>
+                <li>Conteúdo adaptável: por exemplo, frações ensinadas por vídeos, jogos ou textos, conforme o estilo de aprendizagem do aluno.</li>
+            </ul>
+        </section>
+        <section class="prototype">
+            <h2>Protótipo Conceitual</h2>
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Prototipo Conceitual" style="width:100%;max-width:320px;display:block;margin:1rem auto;">
+            <p>
+                Imagine um ambiente digital onde cada estudante aprende do seu jeito, no seu ritmo, e o professor acompanha tudo em tempo real!
+            </p>
+        </section>
+        <a class="cta" href="#">Quero saber mais</a>
+    </main>
+    <footer>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;padding:1.5rem 0;background:#111;color:#f4d03f;">
+            <div>
+                © 2025 EducaFlex & FRC
+            </div>
+            <div style="display:flex;gap:1rem;">
+                <a href="#" id="open-contact" style="color:#f4d03f;">
+                    <img src="https://img.icons8.com/fluency/28/new-post.png" alt="E-mail" style="vertical-align:middle;">
+                </a>
+            </div>
+            <small style="color:#bbb;">Desenvolvido por EducaFlex & FRC</small>
+        </div>
+    </footer>
+
+    <!-- Modal de contato -->
+    <div id="contact-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:1000;">
+        <div style="background:#fff;padding:2rem 1.5rem;border-radius:12px;max-width:350px;width:90%;position:relative;">
+            <button id="close-modal" style="position:absolute;top:8px;right:12px;background:none;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+            <h3 style="margin-top:0;color:#0f9d58;">Contato</h3>
+            <form action="https://formsubmit.co/educaflex.frc@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://google.com"> <!-- Troque para sua página de obrigado se quiser -->
+                <div style="margin-bottom:1rem;">
+                    <input type="text" name="name" placeholder="Seu nome" required style="width:100%;padding:0.5rem;border-radius:6px;border:1px solid #ccc;">
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <input type="email" name="email" placeholder="Seu e-mail" required style="width:100%;padding:0.5rem;border-radius:6px;border:1px solid #ccc;">
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <textarea name="message" placeholder="Sua mensagem" required style="width:100%;padding:0.5rem;border-radius:6px;border:1px solid #ccc;min-height:80px;"></textarea>
+                </div>
+                <button type="submit" style="background:#0f9d58;color:#fff;padding:0.7rem 1.5rem;border:none;border-radius:6px;font-weight:bold;cursor:pointer;width:100%;">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Abrir modal
+        document.getElementById('open-contact').onclick = function(e) {
+            e.preventDefault();
+            document.getElementById('contact-modal').style.display = 'flex';
+        };
+        // Fechar modal
+        document.getElementById('close-modal').onclick = function() {
+            document.getElementById('contact-modal').style.display = 'none';
+        };
+        // Fechar ao clicar fora do modal
+        document.getElementById('contact-modal').onclick = function(e) {
+            if (e.target === this) this.style.display = 'none';
+        };
+    </script>
+
+    <!-- O formulário de contato já está funcional para uso com FormSubmit.
+         Para funcionar, acesse o site por http://localhost:xxxx ou publique online.
+         Exemplo para rodar localmente:
+         - No terminal, navegue até a pasta SITEFRC
+         - Execute: python -m http.server
+         - Acesse: http://localhost:8000
+    -->
+    <!-- Nenhuma alteração no código. Apenas rode o site em um servidor web para o formulário funcionar. -->
+</body>
+</html>
