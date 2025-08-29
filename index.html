@@ -5,8 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EducaFlex — Plataforma de Aprendizagem Personalizada</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.5);
+            align-items: center; justify-content: center;
+            z-index: 2000;
+        }
+        .popup-content {
+            background: #fff;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90vw;
+            padding: 2rem 1.5rem;
+            position: relative;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            animation: popupIn 0.2s;
+        }
+        @keyframes popupIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .popup-close {
+            position: absolute;
+            top: 8px; right: 12px;
+            background: none; border: none;
+            font-size: 1.5rem; cursor: pointer;
+            color: #0f9d58;
+        }
+        .feature-card { cursor: pointer; transition: box-shadow 0.2s; }
+        .feature-card:hover { box-shadow: 0 4px 16px rgba(15,157,88,0.15); }
+        .saiba-mais-btn {
+            background: #0f9d58;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .saiba-mais-btn:hover {
+            background: #f4d03f;
+            color: #111;
+        }
+    </style>
 </head>
 <body>
+    <!-- Popup de boas-vindas -->
+    <div id="welcome-popup" class="popup-overlay" style="display:flex;">
+        <div class="popup-content" style="text-align:center;">
+            <button class="popup-close" onclick="closePopup('welcome-popup')">&times;</button>
+            <h2>Bem-vindo ao EducaFlex!</h2>
+            <p>Descubra uma nova forma de aprender, com tecnologia, personalização e diversão.<br>
+            Explore as funcionalidades e interaja com os cards para saber mais!</p>
+            <button class="saiba-mais-btn" onclick="closePopup('welcome-popup')">Começar</button>
+        </div>
+    </div>
     <main>
         <header>
             <h1>EducaFlex</h1>
@@ -17,34 +75,95 @@
             <h2>O que é a EducaFlex?</h2>
             <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="Educacao personalizada" style="width:100%;max-width:320px;display:block;margin:1rem auto;">
             <p>
-                A EducaFlex é uma plataforma inovadora que utiliza Inteligência Artificial e análise de dados para adaptar conteúdos ao perfil de cada estudante, tornando o aprendizado mais eficiente, divertido e personalizado.
+                A EducaFlex é uma plataforma inovadora que utiliza Inteligência Artificial e análise de dados para adaptar conteúdos ao perfil de cada estudante. 
+                <br><br>
+                <strong>Por que escolher a EducaFlex?</strong>
+                <ul>
+                    <li>Personalização total do aprendizado: cada aluno segue seu próprio ritmo e estilo.</li>
+                    <li>Professores têm acesso a relatórios inteligentes e podem intervir de forma mais eficiente.</li>
+                    <li>Conteúdos dinâmicos: vídeos, jogos, textos e exercícios adaptados ao perfil do estudante.</li>
+                    <li>Integração fácil com escolas públicas e privadas.</li>
+                </ul>
+                <button class="saiba-mais-btn" onclick="openPopup('about-popup')">Saiba Mais</button>
             </p>
         </section>
+        <!-- Popup explicativo sobre EducaFlex -->
+        <div id="about-popup" class="popup-overlay">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('about-popup')">&times;</button>
+                <h3>Sobre o EducaFlex</h3>
+                <p>
+                    O EducaFlex foi criado para revolucionar o ensino, tornando-o mais inclusivo, eficiente e prazeroso.<br><br>
+                    <strong>Como funciona?</strong><br>
+                    A plataforma analisa o desempenho do aluno em tempo real, identifica pontos fortes e fracos, e sugere conteúdos e atividades que melhor se encaixam no seu perfil.<br><br>
+                    <strong>Para professores:</strong> dashboards intuitivos, alertas automáticos sobre dificuldades dos alunos e sugestões de intervenções.<br>
+                    <strong>Para alunos:</strong> trilhas gamificadas, conquistas, feedback instantâneo e liberdade para aprender do seu jeito.<br>
+                    <strong>Para escolas:</strong> integração simples, relatórios completos e suporte dedicado.
+                </p>
+            </div>
+        </div>
         <section>
             <h2>Principais Funcionalidades</h2>
             <div class="features">
-                <div class="feature-card">
+                <div class="feature-card" onclick="openPopup('ia-popup')">
                     <img src="https://img.icons8.com/color/48/000000/artificial-intelligence.png" alt="Icone IA" style="width:48px;display:block;margin-bottom:0.5rem;">
                     <strong>IA & Dados</strong>
                     <p>Conteúdos adaptados ao perfil do estudante, com base em análise de desempenho e preferências.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" onclick="openPopup('relatorios-popup')">
                     <img src="https://img.icons8.com/color/48/000000/combo-chart--v1.png" alt="Icone Relatorios" style="width:48px;display:block;margin-bottom:0.5rem;">
                     <strong>Relatórios Inteligentes</strong>
                     <p>Professores recebem relatórios detalhados sobre pontos fortes e fracos de cada aluno.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" onclick="openPopup('trilhas-popup')">
                     <img src="https://img.icons8.com/color/48/000000/learning.png" alt="Icone Trilhas" style="width:48px;display:block;margin-bottom:0.5rem;">
                     <strong>Trilhas Customizadas</strong>
                     <p>Alunos recebem trilhas de aprendizagem com vídeos, exercícios e jogos conforme seu ritmo.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" onclick="openPopup('integracao-popup')">
                     <img src="https://img.icons8.com/color/48/000000/school-building.png" alt="Icone Integracao" style="width:48px;display:block;margin-bottom:0.5rem;">
                     <strong>Integração Escolar</strong>
                     <p>Compatível com escolas públicas e privadas, facilitando a gestão e acompanhamento.</p>
                 </div>
             </div>
         </section>
+        <!-- Popups das funcionalidades -->
+        <div id="ia-popup" class="popup-overlay">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('ia-popup')">&times;</button>
+                <h3>IA & Dados</h3>
+                <p>
+                    Nossa Inteligência Artificial analisa o desempenho do aluno em tempo real, identifica padrões de aprendizagem e sugere conteúdos personalizados. Assim, cada estudante recebe o que precisa para evoluir, sem perder tempo com conteúdos que já domina.
+                </p>
+            </div>
+        </div>
+        <div id="relatorios-popup" class="popup-overlay">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('relatorios-popup')">&times;</button>
+                <h3>Relatórios Inteligentes</h3>
+                <p>
+                    Professores têm acesso a relatórios detalhados, com gráficos, alertas automáticos e sugestões de atividades. Isso permite intervenções rápidas e precisas, melhorando o desempenho da turma.
+                </p>
+            </div>
+        </div>
+        <div id="trilhas-popup" class="popup-overlay">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('trilhas-popup')">&times;</button>
+                <h3>Trilhas Customizadas</h3>
+                <p>
+                    Cada aluno segue uma trilha de aprendizagem única, com desafios, vídeos, jogos e textos adaptados ao seu estilo. O progresso é gamificado, tornando o estudo mais motivador e divertido.
+                </p>
+            </div>
+        </div>
+        <div id="integracao-popup" class="popup-overlay">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('integracao-popup')">&times;</button>
+                <h3>Integração Escolar</h3>
+                <p>
+                    O EducaFlex se integra facilmente a sistemas de escolas públicas e privadas, facilitando a gestão, o acompanhamento e a comunicação entre todos os envolvidos no processo educacional.
+                </p>
+            </div>
+        </div>
         <section>
             <h2>Como Funciona?</h2>
             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="App e Dashboard" style="width:100%;max-width:320px;display:block;margin:1rem auto;">
@@ -98,16 +217,28 @@
         </div>
     </div>
     <script>
-        // Abrir modal
+        // Função para abrir popups
+        function openPopup(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+        // Função para fechar popups
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+        // Fechar popups ao clicar fora do conteúdo
+        document.querySelectorAll('.popup-overlay').forEach(function(popup) {
+            popup.onclick = function(e) {
+                if (e.target === this) this.style.display = 'none';
+            };
+        });
+        // Modal de contato (mantém funcionalidade existente)
         document.getElementById('open-contact').onclick = function(e) {
             e.preventDefault();
             document.getElementById('contact-modal').style.display = 'flex';
         };
-        // Fechar modal
         document.getElementById('close-modal').onclick = function() {
             document.getElementById('contact-modal').style.display = 'none';
         };
-        // Fechar ao clicar fora do modal
         document.getElementById('contact-modal').onclick = function(e) {
             if (e.target === this) this.style.display = 'none';
         };
